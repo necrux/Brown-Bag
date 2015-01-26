@@ -18,3 +18,5 @@ for i in $(ls /var/www/vhosts/); do echo "$IP -> $i"; done
 echo -e "\nAlternatively you can add the following entries to your host file:\n"
 for i in $(ls /var/www/vhosts/); do echo "$IP $i"; done
 echo
+
+/etc/init.d/httpd restart
