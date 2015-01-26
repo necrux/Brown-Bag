@@ -7,6 +7,7 @@ echo "Please enter the root/apex domain for this project."
 echo -e "   EXAMPLE: http://magento.\e[1;32mlecture\e[0m.com"
 read -p "--> " APEX
 
+sed -i "s/__DOMAIN__/$APEX/g" /root/Brown-Bag/scenario*.sh
 sed -i "s/__DOMAIN__/$APEX/g" /etc/httpd/vhost.d/*.conf
 
 ls /etc/httpd/vhost.d/*__DOMAIN__*|awk -v APEX=$APEX -F'__DOMAIN__' '{print "mv " $1 "__DOMAIN__" $2 " " $1 APEX $2}'|bash
