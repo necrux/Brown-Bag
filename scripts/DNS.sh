@@ -20,4 +20,27 @@ echo -e "\nAlternatively you can add the following entries to your host file:\n"
 for i in $(ls /var/www/vhosts/); do echo "$IP $i"; done
 echo
 
+cat << EOF
+Be sure to visit the website in your browser to finish configuring the environments:
+
+http://wordpress.$APEX.com
+
+Database: wordpress
+DB User: wordpress_user
+DB Password: wordpress-lover
+
+http://magento.$APEX.com
+
+Database: magento
+DB User: magento_user
+DB Password: magento-lover
+
+http://rackspace.$APEX.com
+
+Database: rackspace
+DB User: rackspace_user
+DB Password: joomla-lover
+
+EOF
+
 /etc/init.d/httpd restart
