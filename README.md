@@ -8,7 +8,7 @@ Troubleshooting Methodology<br><br>
 
 1) Replicate the problem.<br>
 2) Identify likely causes (view logs).<br>
-   - Research solutions.<br>
+   * Research solutions.<br>
 3) Implement the solution.<br>
 4) Test the solution.<br>
 5) Document the solution.<br><br>
