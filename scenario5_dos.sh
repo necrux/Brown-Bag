@@ -8,5 +8,7 @@ version=$(grep -o "release [6-7]" /etc/redhat-release|cut -d' ' -f2)
 
 case $version in
     '6')
+;;
     '7')
+;;
 esac
