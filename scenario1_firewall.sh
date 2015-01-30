@@ -28,6 +28,11 @@ EOF
 echo "iptables -I INPUT -m conntrack --ctstate NEW -m tcp -p tcp --dport 80 -j ACCEPT" >> /root/.bash_history
 ;;
     '7')
+firewall-cmd --zone=public --remove-service=http
+firewall-cmd --zone=public --remove-service=http --permanent
+firewall-cmd --zone=public --remove-port=80/tcp
+firewall-cmd --zone=public --remove-port=80/tcp --permanent
+echo "firewall-cmd --zone=public --add-service=http" >> /root/.bash_history
 ;;
 esac
 
