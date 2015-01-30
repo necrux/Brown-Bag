@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #NOTE: This script assumes a .com TLD. If you are using a different TLD then you need to amend this file accordingly.
-# sed -i 's/\.com/.<MY_TLD>/g' ./initialize_environment.sh && sed -i 's/cloud\.net/cloud.com/g' ./initialize_environment.sh
+# sed -i 's/\.com/.<MY_TLD>/g' ./initialize_environment.sh && sed -i 's/cloud\.<MY_TLD>/cloud.com/g' ./initialize_environment.sh
 
 clear
 
