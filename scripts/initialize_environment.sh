@@ -1,12 +1,13 @@
 #!/bin/bash
 
 #NOTE: This script assumes a .com TLD. If you are using a different TLD then you need to amend this file accordingly.
+# sed -i 's/\.com/.<MY_TLD>/g' ./initialize_environment.sh && sed -i 's/cloud\.net/cloud.com/g' ./initialize_environment.sh
 
 clear
 
 IP=$(ip address show eth0|awk -F'[t /]' '/inet / {print $7}')
 
-echo "Please enter the root/apex domain for this project."
+echo "Please enter the primary apex/root domain for this project."
 echo -e "   EXAMPLE: http://magento.\e[1;32mlecture\e[0m.com"
 read -p "--> " APEX
 
