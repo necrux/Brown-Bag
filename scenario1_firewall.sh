@@ -11,6 +11,9 @@ rm -rf /root/junk/
 
 case $version in
     '6')
+/etc/init.d/httpd restart
+/etc/init.d/mysqld restart
+
 cat > /etc/sysconfig/iptables << EOF
 *filter
 :INPUT ACCEPT [0:0]
@@ -28,6 +31,9 @@ EOF
 echo "iptables -I INPUT -m conntrack --ctstate NEW -m tcp -p tcp --dport 80 -j ACCEPT" >> /root/.bash_history
 ;;
     '7')
+systemctl restart httpd.service
+systemctl restart mariadb.service
+
 firewall-cmd --zone=public --remove-service=http
 firewall-cmd --zone=public --remove-service=http --permanent
 firewall-cmd --zone=public --remove-port=80/tcp
