@@ -16,18 +16,26 @@ sed -i "s/__DOMAIN__/$APEX/g" /etc/httpd/vhost.d/*.conf
 ls /etc/httpd/vhost.d/*__DOMAIN__*|awk -v APEX=$APEX -F'__DOMAIN__' '{print "mv " $1 "__DOMAIN__" $2 " " $1 APEX $2}'|bash
 ls -d /var/www/vhosts/*__DOMAIN__*|awk -v APEX=$APEX -F'__DOMAIN__' '{print "mv " $1 "__DOMAIN__" $2 " " $1 APEX $2}'|bash
 
-read -p "Would you like to automatically add the DNS records to your Rackspace account (this option is only applicable if you are using Rackspace DNS)? [Y/n]: " ANS
+read -p "Would you like to automatically add the DNS records to your Rackspace account \
+(this option is only applicable if you are using Rackspace DNS)? [Y/n]: " ANS
 
 if [ "$ANS" == "y" ] || [ "$ANS" == "Y" ]; then
     read -p "What is your Rackspace user name? " USERNAME
     read -p "What is your Rackspace DDI? " DDI
     read -p "What is your Rackspace API key? " API
 
-    TOKEN=$(curl -s -X 'POST' -d "{\"auth\":{\"RAX-KSKEY:apiKeyCredentials\":{\"username\":\"$USERNAME\", \"apiKey\":\"$API\"}}}" -H "Content-Type: application/json" https://identity.api.rackspacecloud.com/v2.0/tokens|python -m json.tool|grep -A5 token|awk -F\" '/id/ {print $4}')
+    TOKEN=$(curl -s -X 'POST' -d "{\"auth\":{\"RAX-KSKEY:apiKeyCredentials\":{\"username\":\"$USERNAME\", \"apiKey\":\"$API\"}}}" \
+-H "Content-Type: application/json" https://identity.api.rackspacecloud.com/v2.0/tokens|python -m json.tool|grep -A5 token|awk -F\" '/id/ {print $4}')
 
-    ID=$(curl -s -H "X-Auth-Token: $TOKEN" https://dns.api.rackspacecloud.com/v1.0/$DDI/domains?name=$APEX.com|python -m json.tool|grep id|grep -o [0-9].*[0-9])
+    ID=$(curl -s -H "X-Auth-Token: $TOKEN" https://dns.api.rackspacecloud.com/v1.0/$DDI/domains?name=$APEX.com \
+|python -m json.tool|grep id|grep -o [0-9].*[0-9])
 
-    curl -s -d '{"records": [{"name" : "wordpress.'"$APEX"'.com","type" : "A","data" : '\"$IP\"'},{"name" : "magento.'"$APEX"'.com","type" : "A","data" : '\"$IP\"'},{"name" : "rackspace.'"$APEX"'.com","type" : "A","data" : '\"$IP\"'}]}' -H "X-Auth-Token: $TOKEN" -H "Content-Type: application/json" "https://dns.api.rackspacecloud.com/v1.0/$DDI/domains/$ID/records"
+    curl -s -d '
+{"records": [
+{"name" : "wordpress.'"$APEX"'.com","type" : "A","data" : '\"$IP\"'},
+{"name" : "magento.'"$APEX"'.com","type" : "A","data" : '\"$IP\"'},
+{"name" : "rackspace.'"$APEX"'.com","type" : "A","data" : '\"$IP\"'}
+]}' -H "X-Auth-Token: $TOKEN" -H "Content-Type: application/json" "https://dns.api.rackspacecloud.com/v1.0/$DDI/domains/$ID/records"
 
 else
     echo -e "\nAll files updated. To complete the exercise create the following A records:\n"
