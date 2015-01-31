@@ -6,6 +6,7 @@
 clear
 
 IP=$(ip address show eth0|awk -F'[t /]' '/inet / {print $7}')
+version=$(grep -o "release [6-7]" /etc/redhat-release|cut -d' ' -f2)
 
 echo "Please enter the primary apex/root domain for this project."
 echo -e "   EXAMPLE: http://magento.\e[1;32mlecture\e[0m.com"
@@ -70,4 +71,11 @@ DB Password: joomla-lover
 
 EOF
 
+case $version in
+    '6')
 /etc/init.d/httpd restart
+;;
+    '7')
+systemctl restart httpd.service
+;;
+esac
