@@ -12,6 +12,8 @@ echo "Please enter the primary apex/root domain for this project."
 echo -e "   EXAMPLE: http://magento.\e[1;32mlecture\e[0m.com"
 read -p "--> " APEX
 
+echo "127.0.0.1 magento.$APEX.com" >> /etc/hosts
+
 sed -i "s/__DOMAIN__/$APEX/g" /root/Brown-Bag/scenario*.sh
 sed -i "s/__DOMAIN__/$APEX/g" /etc/httpd/vhost.d/*.conf
 
