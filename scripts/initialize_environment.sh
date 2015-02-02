@@ -17,8 +17,9 @@ sed -i "s/__DOMAIN__/$DOMAIN/g" /etc/httpd/vhost.d/*.conf
 ls /etc/httpd/vhost.d/*__DOMAIN__*|awk -v DOMAIN=$DOMAIN -F'__DOMAIN__' '{print "mv " $1 "__DOMAIN__" $2 " " $1 DOMAIN $2}'|bash
 ls -d /var/www/vhosts/*__DOMAIN__*|awk -v DOMAIN=$DOMAIN -F'__DOMAIN__' '{print "mv " $1 "__DOMAIN__" $2 " " $1 DOMAIN $2}'|bash
 
-read -p "Would you like to automatically add the DNS records to your Rackspace account \
-(this option is only applicable if you are using Rackspace DNS)? [Y/n]: " ANS
+echo -e "\nWould you like to automatically add the DNS records to your Rackspace account?"
+echo "    NOTE: This option is only applicable if you are using Rackspace DNS."
+read -p "[Y/n]: " ANS
 
 if [ "$ANS" == "y" ] || [ "$ANS" == "Y" ]; then
     read -p "What is your Rackspace user name? " USERNAME
