@@ -33,9 +33,9 @@ if [ "$ANS" == "y" ] || [ "$ANS" == "Y" ]; then
 
     curl -s -d '
 {"records": [
-{"name" : "wordpress.'"$DOMAIN"'.com","type" : "A","data" : '\"$IP\"'},
-{"name" : "magento.'"$DOMAIN"'.com","type" : "A","data" : '\"$IP\"'},
-{"name" : "rackspace.'"$DOMAIN"'.com","type" : "A","data" : '\"$IP\"'}
+{"name" : "wordpress.'"$DOMAIN"'","type" : "A","data" : '\"$IP\"'},
+{"name" : "magento.'"$DOMAIN"'","type" : "A","data" : '\"$IP\"'},
+{"name" : "rackspace.'"$DOMAIN"'","type" : "A","data" : '\"$IP\"'}
 ]}' -H "X-Auth-Token: $TOKEN" -H "Content-Type: application/json" "https://dns.api.rackspacecloud.com/v1.0/$DDI/domains/$ID/records" 2>&1 > /dev/null
 
 else
