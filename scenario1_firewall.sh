@@ -42,4 +42,4 @@ echo "firewall-cmd --zone=public --add-service=http" >> /root/.bash_history
 ;;
 esac
 
-shutdown -rf now
+shutdown -r now
