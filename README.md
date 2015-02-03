@@ -11,7 +11,7 @@ A collection of scripts for performing various group troubleshooting exercises. 
 6. Depending on how you answered the questions presented in step 5 you *may* need to configure either DNS or your hosts file.
 7. Visit the URLs on screen to complete the set-up for your CMSs; all required information is displayed in terminal (be sure to read).
 8. If you intend on doing the inode exercise then I recommend starting the script in screen as it can take hours to run: ```screen -S inodes -m bash /root/brown-bag/scripts/inodes.sh```
-9. As you go through the exercises runs the scripts in /root/brown-bag/scenario* to configure the environment appropriately (scenario objectives are in the comments at the top of each script). More scenarios to come!
+9. As you go through the exercises runs the scripts in /root/brown-bag/scenario* to configure the environment appropriately (scenario objectives are in the comments at the top of each script).<br>More scenarios to come!
 10. Profit!
 
 
