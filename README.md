@@ -1,10 +1,10 @@
 # Brown-Bag
-A collection of scripts for performing various group troubleshooting exercises. This is intended to be used in conjunction with the RHEL troubleshooting cloud-init scripts; these scripts configure the LAMP stack, install WordPress, install Magento (sample data included), install Joomla, and it automatcially clones this repo.
+A collection of scripts for performing various group troubleshooting exercises. This is intended to be used in conjunction with the RHEL troubleshooting cloud-init scripts; these scripts configure the LAMP stack, install WordPress, install Magento (sample data included), install Joomla, and they automatcially clone this repo.
 
 **HOW TO DEPLOY**
 
 1. Grab the troubleshooting cloud-init script for RHEL 6 or 7 from the cloud-init repo: https://github.com/necrux/cloud-init
-2. Modify the cloud-init script with your user specific data: <code>grep __[a-z-]*__ rhel*_troubleshootingi</code>
+2. Modify the cloud-init script with your user specific data: <code>grep __[a-z-]*__ rhel*_troubleshooting</code>
 3. Use the Nova client or supernova to create a server with your modified cloud-init script.
 4. Once the server comes online make certain the cloud-init script completes **before** proceeding further: <code>tail -f /var/log/cloud-init-output.log</code> 
 5. After cloud-init completes you can initialize the environment: <code>bash /root/brown-bag/initialize_environment.sh</code>
