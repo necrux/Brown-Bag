@@ -9,7 +9,7 @@
 version=$(grep -o "release [6-7]" /etc/redhat-release|cut -d' ' -f2)
 SSH=$(netstat -pt|awk '/ssh/ {print $4}'|cut -d: -f2)
 
-rm -rf /root/junk/
+bash /root/brown-bag/scripts/restore_environment.sh
 
 case $version in
     '6')
