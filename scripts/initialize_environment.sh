@@ -47,7 +47,7 @@ else
     for i in $(ls /var/www/vhosts/); do echo "$IP $i"; done
 fi
 
-cat << EOF
+tee /root/CMS_info.txt << EOF
 
 Be sure to visit the website in your browser to finish configuring the environments:
 
