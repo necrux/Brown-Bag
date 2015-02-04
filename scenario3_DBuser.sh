@@ -5,6 +5,7 @@
 
 #Solution:
 #This is because the database user specified in /var/www/vhosts/rackspace.__DOMAIN__/configuration.php does not exist.
+#You can verify that no user has rights on this database by running: SELECT user,host FROM mysql.db WHERE db='rackspace';
 
 version=$(grep -o "release [6-7]" /etc/redhat-release|cut -d' ' -f2)
 
