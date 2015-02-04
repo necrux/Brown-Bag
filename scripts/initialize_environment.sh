@@ -73,9 +73,9 @@ EOF
 
 case $version in
     '6')
-/etc/init.d/httpd restart 2>&1 > /dev/null
+/etc/init.d/httpd start 2>&1 > /dev/null
 ;;
     '7')
-systemctl restart httpd.service
+systemctl start httpd.service
 ;;
 esac
