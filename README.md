@@ -39,6 +39,6 @@ A collection of scripts for performing various group troubleshooting exercises. 
 
 1. Make a copy of scripts/sceranio_template.skel for the sceranio template.
 2. Create your script from the template.
-3. Edit scripts/restore_environment.sh as necessary. This script is intended to restore the server back to it's normal, working state and is the first item ran for each scenario script.
+3. Edit scripts/restore_environment.sh as necessary. This script is intended to restore the server back to it's normal, working state and is the first item ran for each scenario.
 
 Enjoy!
