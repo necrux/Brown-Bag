@@ -34,6 +34,10 @@ A collection of scripts for performing various group troubleshooting exercises. 
    - https://try.github.io/levels/1/challenges/1
 * Screen
    - http://www.tecmint.com/screen-command-examples-to-manage-linux-terminals/
+* Inodes
+   - http://www.cyberciti.biz/tips/understanding-unixlinux-filesystem-inodes.html
+* Exit Codes
+   - http://tldp.org/LDP/abs/html/exitcodes.html
 
 **Supernova Syntax**
 
