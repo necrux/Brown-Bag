@@ -8,8 +8,8 @@ SSH=$(netstat -pt|awk '/ssh/ {print $4}'|cut -d: -f2)
 
 rm -rf /root/junk/
 
-chown apache:apache /var/www/vhosts/wordpress.*.com/index.php
-chmod 644 /var/www/vhosts/wordpress.*.com/index.php
+chown apache:apache /var/www/vhosts/wordpress.*/index.php
+chmod 644 /var/www/vhosts/wordpress.*/index.php
 
 mysql -e "grant all on rackspace.* to 'rackspace_user'@'localhost' identified by 'joomla-lover';"
 

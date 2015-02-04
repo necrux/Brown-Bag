@@ -10,8 +10,8 @@ version=$(grep -o "release [6-7]" /etc/redhat-release|cut -d' ' -f2)
 
 bash /root/brown-bag/scripts/restore_environment.sh
 
-chown dave:dave /var/www/vhosts/wordpress.*.com/index.php
-chmod 640 /var/www/vhosts/wordpress.*.com/index.php
+chown dave:dave /var/www/vhosts/wordpress.*/index.php
+chmod 640 /var/www/vhosts/wordpress.*/index.php
 
 case $version in
     '6')
