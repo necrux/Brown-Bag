@@ -4,7 +4,7 @@ A collection of scripts for performing various group troubleshooting exercises. 
 **HOW TO DEPLOY**
 
 1. Grab the troubleshooting cloud-init script for RHEL 6 or 7 from the cloud-init repo: https://github.com/necrux/cloud-init
-2. Modify the cloud-init script with your user specific data. You can run this command to determine what you need to change: ```egrep "__[a-z-]*__|ssh-rsa .*" rhel*_troubleshooting --color```
+2. Modify the cloud-init script with your user specific data. You can run this command to determine what you need to change: ```egrep "__[a-z-]*__|ssh-rsa .*" rhel?_troubleshooting --color```
 3. Use the Nova client or Supernova to create a server with your modified cloud-init script. Lazy install for Nova and Supernova: ```bash <(curl -sk https://necrux.com/supernova.sh)```
 4. Once the server comes online make certain the cloud-init script completes **before** proceeding further: ```tail -f /var/log/cloud-init-output.log```
 5. After cloud-init completes you can initialize the environment: ```bash /root/brown-bag/initialize_environment.sh```
@@ -21,5 +21,16 @@ A collection of scripts for performing various group troubleshooting exercises. 
 3. Implement the solution.
 4. Test the solution.
 5. Document the solution.
+
+**Additional Information**
+* cloud-init
+   - https://developer.rackspace.com/blog/using-cloud-init-with-rackspace-cloud/
+   - https://cloudinit.readthedocs.org/en/latest/
+* Nova client
+   - http://www.rackspace.com/knowledge_center/article/installing-python-novaclient-on-linux-and-mac-os
+* Supernova
+   - http://supernova.readthedocs.org/en/latest/
+* Github
+   - https://try.github.io/levels/1/challenges/1
 
 Enjoy!
