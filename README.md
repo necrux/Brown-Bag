@@ -35,14 +35,14 @@ A collection of scripts for performing various group troubleshooting exercises. 
 * Screen
    - http://www.tecmint.com/screen-command-examples-to-manage-linux-terminals/
 
-<pre>
-Supernova Syntax:
-supernova <environment_name> --flavor <flavor> --image <UUID>
+**Supernova Syntax:**
 
-Supernova Examples:
-supernova dfw boot --config-drive=true --flavor performance1-1 --image 8aac6fb5-4bd3-4256-bf6e-ff8500bf60cd --user-data rhel6_troubleshooting RHEL-6
-supernova dfw boot --config-drive=true --flavor performance1-1 --image d6e18edc-d7dc-4639-b55f-56012798df33 --user-data rhel7_troubleshooting RHEL-7
-</pre>
+```supernova <environment_name> --flavor <flavor> --image <UUID>```
+
+**Supernova Examples:**
+
+```supernova dfw boot --config-drive=true --flavor performance1-1 --image 8aac6fb5-4bd3-4256-bf6e-ff8500bf60cd --user-data rhel6_troubleshooting RHEL-6```
+```supernova dfw boot --config-drive=true --flavor performance1-1 --image d6e18edc-d7dc-4639-b55f-56012798df33 --user-data rhel7_troubleshooting RHEL-7```
 
 **Contributing Scenarios**
 
