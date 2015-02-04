@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Problem:
-#My website http://press.__DOMAIN__.com is down. I think the database is messed up. HELP!
+#My website http://press.__DOMAIN__ is down. I think the database is messed up. HELP!
 
 #Solution:
 #This is because the inodes are 100% full and MySQL has crashed.
