@@ -37,7 +37,7 @@ A collection of scripts for performing various group troubleshooting exercises. 
 
 **Supernova Syntax:**
 
-```supernova <environment_name> --flavor <flavor> --image <UUID>```
+```supernova <environment_name> --flavor <flavor> --image <UUID> <server_name>```
 
 **Supernova Examples:**
 
