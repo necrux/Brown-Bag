@@ -56,4 +56,10 @@ A collection of scripts for performing various group troubleshooting exercises. 
 2. Create your script from the template.
 3. Edit scripts/restore_environment.sh as necessary. This script is intended to restore the server back to it's normal, working state and is the first item ran for each scenario.
 
+**Quick Build for Veterans**
+
+* CentOS 6 ```bash <(curl -sk https://necrux.com/qbuild6.sh)```
+* CentOS 7 ```bash <(curl -sk https://necrux.com/qbuild7.sh)```
+NOTE: Once the server is built and cloud-init completes run the scripts under /root/brown-bag/scripts as per usual.
+
 Enjoy!
