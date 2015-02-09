@@ -6,6 +6,9 @@
 #Solution:
 #This is due to a firewall rule opening up port 80 being run but not saved.
 
+#Instructor Notes:
+#The bash history for root shows that a rule was added but never saved and we can see the server was recently rebooted. Be sure to show both uptime and history.
+
 version=$(grep -o "release [6-7]" /etc/redhat-release|cut -d' ' -f2)
 SSH=$(netstat -pt|awk '/ssh/ {print $4}'|cut -d: -f2)
 

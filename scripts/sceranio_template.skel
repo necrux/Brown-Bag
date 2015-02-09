@@ -6,6 +6,9 @@
 #Solution:
 #
 
+#Instructor Notes:
+#
+
 version=$(grep -o "release [6-7]" /etc/redhat-release|cut -d' ' -f2)
 
 bash /root/brown-bag/scripts/restore_environment.sh

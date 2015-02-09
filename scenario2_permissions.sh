@@ -6,6 +6,9 @@
 #Solution:
 #This is due to improper permissions on /var/www/vhosts/word.__DOMAIN__/index.php
 
+#Instructor Notes:
+#It looks like Dave may have uploaded a new version of /var/www/vhosts/word.__DOMAIN__/index.php (note the ownership), and it has improper permissions.
+
 version=$(grep -o "release [6-7]" /etc/redhat-release|cut -d' ' -f2)
 
 bash /root/brown-bag/scripts/restore_environment.sh

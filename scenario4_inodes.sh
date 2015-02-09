@@ -5,6 +5,10 @@
 
 #Solution:
 #This is because the inodes are 100% full and MySQL has crashed.
+#Delete /root/junk/ to free up ~1000 inodes. Be sure to restart MySQL.
+
+#Instructor Notes:
+#The bulk of the inodes are in /root/backup/; parsing this file will take a very long time. Suggest Performing triage if able, notifying the customer ASAP, and starting a scan of the system.
 
 version=$(grep -o "release [6-7]" /etc/redhat-release|cut -d' ' -f2)
 
