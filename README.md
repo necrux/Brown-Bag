@@ -22,23 +22,6 @@ A collection of scripts for performing various group troubleshooting exercises. 
 4. Test the solution.
 5. Document the solution.
 
-**Additional Information**
-* cloud-init
-   - https://developer.rackspace.com/blog/using-cloud-init-with-rackspace-cloud/
-   - https://cloudinit.readthedocs.org/en/latest/
-* Nova Client
-   - http://www.rackspace.com/knowledge_center/article/installing-python-novaclient-on-linux-and-mac-os
-* Supernova
-   - http://supernova.readthedocs.org/en/latest/
-* Github
-   - https://try.github.io/levels/1/challenges/1
-* Screen
-   - http://www.tecmint.com/screen-command-examples-to-manage-linux-terminals/
-* Inodes
-   - http://www.cyberciti.biz/tips/understanding-unixlinux-filesystem-inodes.html
-* Exit Codes
-   - http://tldp.org/LDP/abs/html/exitcodes.html
-
 **Supernova Syntax**
 
 ```supernova <environment_name> --flavor <flavor> --image <UUID> <server_name>```
