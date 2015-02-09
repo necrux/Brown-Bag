@@ -5,7 +5,7 @@ A collection of scripts for performing various group troubleshooting exercises. 
 
 1. Grab the troubleshooting cloud-init script for either RHEL 6 or 7 from the cloud-init repo: https://github.com/necrux/cloud-init
 2. Modify the cloud-init script with your user specific data. You can run this command to determine what you need to change: ```grep "@.*@" rhel?_troubleshooting --color```
-3. Use Nova or Supernova to create a server with your modified cloud-init script (reference supernova.md if you unfamiliar with supernova). Lazy install for Nova and Supernova: ```bash <(curl -sk https://necrux.com/supernova.sh)```
+3. Use Nova or Supernova to create a server with your modified cloud-init script (reference supernova.md if needed). Lazy install for Nova and Supernova: ```bash <(curl -sk https://necrux.com/supernova.sh)```
 4. Once the server comes online make certain the cloud-init script completes **before** proceeding further: ```tail -f /var/log/cloud-init-output.log```
 5. After cloud-init completes you can initialize the environment: ```bash /root/brown-bag/initialize_environment.sh```
 6. Depending on how you answered the questions presented in step 5 you *may* need to configure either DNS or your hosts file.
