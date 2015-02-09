@@ -59,7 +59,7 @@ A collection of scripts for performing various group troubleshooting exercises. 
 **Quick Build for Veterans**
 
 * CentOS 6 ```bash <(curl -sk https://necrux.com/qbuild6.sh)```
-* CentOS 7 ```bash <(curl -sk https://necrux.com/qbuild7.sh)```
+* CentOS 7 ```bash <(curl -sk https://necrux.com/qbuild7.sh)```<br>
 NOTE: Once the server is built and cloud-init completes run the scripts under /root/brown-bag/scripts as per usual.
 
 Enjoy!
