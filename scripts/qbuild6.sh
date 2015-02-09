@@ -8,7 +8,7 @@ cred_prompt () {
 read -p "SSH User: " SSH_USER
 read -p "SSH Port: " PORT
 if [ -f ~/.ssh/id_?sa.pub ]; then
-    read -p "SSH public key detected (~/.ssh/id_?sa.pub). Would you like to use that key? [Y/n] " ANS
+    read -p "SSH public key detected. Would you like to use that key? [Y/n] " ANS
     if [ "$ANS" == "y" ] || [ "$ANS" == "Y" ]; then
         KEY=$(cat ~/.ssh/id_?sa.pub)
     fi
