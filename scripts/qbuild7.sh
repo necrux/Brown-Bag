@@ -31,11 +31,16 @@ ENV_NAME='$ENV_NAME'
 EOF
 }
 
-
 if [ -f ~/.qbuild ]; then
-    read -p "Credential file detected (~/.qbuild). Would you like to use that file or regenerate? [Y/n] " ANS
+    read -p "Credential file detected (~/.qbuild). Would you like to use that file? [Y/n] " ANS
     if [ "$ANS" == "y" ] || [ "$ANS" == "Y" ]; then
         source ~/.qbuild
+    else
+        cred_prompt
+        read -p "Would you like to save this information to ~/.qbuild for even speedier future builds? [Y/n] " ANS
+        if [ "$ANS" == "y" ] || [ "$ANS" == "Y" ]; then
+            cred_save
+        fi
     fi
 else
     cred_prompt
