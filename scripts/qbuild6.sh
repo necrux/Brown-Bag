@@ -24,10 +24,11 @@ read -p "Supnernova Environment Name: " ENV_NAME
 cred_save () {
 cat > ~/.qbuild << EOF
 SSH_USER='$SSH_USER'
+PASSWD='$PASSWD'
 PORT='$PORT'
 KEY='$KEY'
 DOMAIN='$DOMAIN'
-PASSWORD='$PASSWORD'
+MAIL_PASSWD='$MAIL_PASSWD'
 ENV_NAME='$ENV_NAME'
 EOF
 }
