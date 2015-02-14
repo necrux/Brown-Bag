@@ -6,6 +6,7 @@
 
 cred_prompt () {
 read -p "SSH User: " SSH_USER
+read -p "Password: " PASSWD
 read -p "SSH Port: " PORT
 if [ -f ~/.ssh/id_?sa.pub ]; then
     read -p "SSH public key detected. Would you like to use that key? [Y/n] " ANS
@@ -16,7 +17,7 @@ else
     read -p "SSH Public Key: " KEY
 fi
 read -p "Mailgun Domain: " DOMAIN
-read -p "Mailgun Password: " PASSWORD
+read -p "Mailgun Password: " MAIL_PASSWD
 read -p "Supnernova Environment Name: " ENV_NAME
 }
 
@@ -53,9 +54,10 @@ fi
 
 curl -sk https://raw.githubusercontent.com/necrux/cloud-init/master/rhel6_troubleshooting -o /tmp/rhel6_troubleshooting 
 sed -i "s%@USER@%$SSH_USER%g" /tmp/rhel6_troubleshooting
+sed -i "s%@PASSWD@%$PASSWD%g" /tmp/rhel6_troubleshooting
 sed -i "s%@SSH-PORT@%$PORT%g" /tmp/rhel6_troubleshooting
 sed -i "s%@PUB-KEY@%$KEY%g" /tmp/rhel6_troubleshooting
 sed -i "s%@@DOMAIN@%$DOMAIN%g" /tmp/rhel6_troubleshooting
-sed -i "s%@PASSWORD@%$PASSWORD%g" /tmp/rhel6_troubleshooting
+sed -i "s%@MAIL-PASSWD@%$MAIL_PASSWD%g" /tmp/rhel6_troubleshooting
 
 supernova $ENV_NAME boot --config-drive=true --flavor performance1-1 --image 8aac6fb5-4bd3-4256-bf6e-ff8500bf60cd --user-data /tmp/rhel6_troubleshooting Brown-Bag
