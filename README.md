@@ -1,6 +1,6 @@
 # Brown-Bag
 A collection of scripts for performing various group troubleshooting exercises. This is intended to be used in conjunction with the RHEL troubleshooting cloud-init scripts; these scripts configure the LAMP stack, install WordPress, install Magento (sample data included), install Joomla, configure Mailgun as a relay for Postix, install/configure Holland, and they clone this repo.<br>
-NOTE: All scripts are built for RHEL/CentOS 6 and 7.
+**NOTE:** All scripts are built for RHEL/CentOS 6 and 7.
 
 **HOW TO DEPLOY**
 
@@ -33,6 +33,6 @@ NOTE: All scripts are built for RHEL/CentOS 6 and 7.
 
 * CentOS 6 ```bash <(curl -sk https://necrux.com/qbuild6.sh)```
 * CentOS 7 ```bash <(curl -sk https://necrux.com/qbuild7.sh)```<br>
-NOTE: Once the server is built and cloud-init completes run the scripts under /root/brown-bag/scripts as per usual.
+**NOTE:** Once the server is built and cloud-init completes run the scripts under /root/brown-bag/scripts as per usual.
 
 Enjoy!
