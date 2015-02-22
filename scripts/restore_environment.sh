@@ -3,6 +3,8 @@
 #This script is to restore the environment back to a working status and should be included as the first item for each scenario scripted.
 #If applicable each scenario added should have the solution scripted here. This will ensure a clean environment.
 
+echo -e "\n\nIt is not uncommon to see failure messages here as this script does not check service status prior to stopping/starting/restarting them.\n\n"
+
 version=$(grep -o "release [6-7]" /etc/redhat-release|cut -d' ' -f2)
 SSH=$(netstat -pt|awk '/ssh/ {print $4}'|cut -d: -f2)
 
